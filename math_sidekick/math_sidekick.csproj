@@ -52,6 +52,7 @@
     <Compile Include="gui\TrinomialsForm.Designer.cs">
       <DependentUpon>TrinomialsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="libraries\MyMath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -81,7 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="classes\" />
-    <Folder Include="libraries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
