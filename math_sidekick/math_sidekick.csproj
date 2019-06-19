@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TrinomialsForm.cs">
+    <Compile Include="gui\TrinomialsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrinomialsForm.Designer.cs">
+    <Compile Include="gui\TrinomialsForm.Designer.cs">
       <DependentUpon>TrinomialsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -63,7 +63,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TrinomialsForm.resx">
+    <EmbeddedResource Include="gui\TrinomialsForm.resx">
       <DependentUpon>TrinomialsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -78,6 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="classes\" />
+    <Folder Include="libraries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
