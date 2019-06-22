@@ -19,12 +19,21 @@ namespace math_sidekick
             InitializeComponent();
         }
 
-        private void TestButton_Click(object sender, EventArgs e)
+        //Pen pen = new Pen(Color.Black, 3);
+        //Graphics g = PlotCanvas.CreateGraphics();
+        //g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+        //g.DrawBezier(pen, 0, 0, 50, 0, 0, 50, 50, 50);
+
+        private void TextInputGroup_Enter(object sender, EventArgs e)
         {
-            Pen pen = new Pen(Color.Black, 3);
-            Graphics g = PlotCanvas.CreateGraphics();
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.DrawBezier(pen, 0, 0, 50, 0, 0, 50, 50, 50);
+            TextBox castSender = (TextBox)sender;
+            castSender.SelectAll();
+        }
+
+        private void TextOutputGroup_Enter(object sender, EventArgs e)
+        {
+            TextBox castSender = (TextBox)sender;
+            castSender.SelectAll();
         }
 
         private void FindRootsButton_Click(object sender, EventArgs e)
@@ -42,6 +51,7 @@ namespace math_sidekick
             if (Equals(result[0],result[1]))
             {//there's one root
                 FirstResultDisplay.Text = ExpressionParser.ComposeComplex(result[0]);
+                SecondResultDisplay.Text = "";
             }
             else
             {//there's two roots

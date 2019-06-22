@@ -14,13 +14,13 @@ namespace math_sidekick.libraries
             const double LOWER_NUMERIC_BOUND = 0.00000001;
             string outputFormat;
 
-            if (Math.Abs(input.Real) < LOWER_NUMERIC_BOUND)
-            {//input has only imaginary part [a]
-                return input.Imaginary.ToString("0.###i");
-            }
-            else if (Math.Abs(input.Imaginary) < LOWER_NUMERIC_BOUND)
+            if (Math.Abs(input.Imaginary) < LOWER_NUMERIC_BOUND)
             {//input has only real part [bi]
                 return input.Real.ToString("0.###");
+            }
+            else if (Math.Abs(input.Real) < LOWER_NUMERIC_BOUND)
+            {//input has only imaginary part [a]
+                return input.Imaginary.ToString("0.###i");
             }
             else
             {//input is a complex number

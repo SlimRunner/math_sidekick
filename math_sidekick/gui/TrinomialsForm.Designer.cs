@@ -29,106 +29,171 @@
         private void InitializeComponent()
         {
             this.PlotCanvas = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TestButton = new System.Windows.Forms.Button();
-            this.InputLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.SecondResultDisplay = new System.Windows.Forms.TextBox();
+            this.FirstResultDisplay = new System.Windows.Forms.TextBox();
+            this.FindRootsButton = new System.Windows.Forms.Button();
+            this.FirstResLabel = new System.Windows.Forms.Label();
+            this.SecondResLabel = new System.Windows.Forms.Label();
+            this.TextInputLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TermA_Label = new System.Windows.Forms.Label();
             this.TermA_Input = new System.Windows.Forms.TextBox();
             this.TermB_Label = new System.Windows.Forms.Label();
             this.TermC_Label = new System.Windows.Forms.Label();
             this.TermB_Input = new System.Windows.Forms.TextBox();
             this.TermC_Input = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.FindRootsButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FirstResultDisplay = new System.Windows.Forms.TextBox();
-            this.SecondResultDisplay = new System.Windows.Forms.TextBox();
+            this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.TitleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PlotCanvas)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.InputLayout.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.MainPanel.SuspendLayout();
+            this.TextInputLayout.SuspendLayout();
+            this.MainLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // PlotCanvas
             // 
-            this.PlotCanvas.Location = new System.Drawing.Point(456, 256);
+            this.PlotCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlotCanvas.Location = new System.Drawing.Point(225, 90);
+            this.PlotCanvas.Margin = new System.Windows.Forms.Padding(6);
             this.PlotCanvas.Name = "PlotCanvas";
-            this.PlotCanvas.Size = new System.Drawing.Size(184, 152);
+            this.PlotCanvas.Size = new System.Drawing.Size(434, 314);
             this.PlotCanvas.TabIndex = 0;
             this.PlotCanvas.TabStop = false;
             // 
-            // panel1
+            // MainPanel
             // 
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Controls.Add(this.TestButton);
-            this.panel1.Controls.Add(this.InputLayout);
-            this.panel1.Controls.Add(this.PlotCanvas);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(661, 421);
-            this.panel1.TabIndex = 1;
+            this.MainPanel.Controls.Add(this.MainLayout);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Padding = new System.Windows.Forms.Padding(4);
+            this.MainPanel.Size = new System.Drawing.Size(673, 418);
+            this.MainPanel.TabIndex = 0;
             // 
-            // TestButton
+            // SecondResultDisplay
             // 
-            this.TestButton.Location = new System.Drawing.Point(64, 344);
-            this.TestButton.Name = "TestButton";
-            this.TestButton.Size = new System.Drawing.Size(128, 24);
-            this.TestButton.TabIndex = 2;
-            this.TestButton.Text = "Test Graphics";
-            this.TestButton.UseVisualStyleBackColor = true;
-            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
+            this.SecondResultDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextInputLayout.SetColumnSpan(this.SecondResultDisplay, 2);
+            this.SecondResultDisplay.Location = new System.Drawing.Point(47, 214);
+            this.SecondResultDisplay.Margin = new System.Windows.Forms.Padding(6);
+            this.SecondResultDisplay.Name = "SecondResultDisplay";
+            this.SecondResultDisplay.ReadOnly = true;
+            this.SecondResultDisplay.Size = new System.Drawing.Size(166, 30);
+            this.SecondResultDisplay.TabIndex = 10;
+            this.SecondResultDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SecondResultDisplay.Enter += new System.EventHandler(this.TextOutputGroup_Enter);
             // 
-            // InputLayout
+            // FirstResultDisplay
             // 
-            this.InputLayout.ColumnCount = 2;
-            this.InputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.InputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.InputLayout.Controls.Add(this.TermA_Label, 0, 0);
-            this.InputLayout.Controls.Add(this.TermA_Input, 1, 0);
-            this.InputLayout.Controls.Add(this.TermB_Label, 0, 1);
-            this.InputLayout.Controls.Add(this.TermC_Label, 0, 2);
-            this.InputLayout.Controls.Add(this.TermB_Input, 1, 1);
-            this.InputLayout.Controls.Add(this.TermC_Input, 1, 2);
-            this.InputLayout.Location = new System.Drawing.Point(48, 56);
-            this.InputLayout.MinimumSize = new System.Drawing.Size(88, 136);
-            this.InputLayout.Name = "InputLayout";
-            this.InputLayout.RowCount = 4;
-            this.InputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.InputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.InputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.InputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.InputLayout.Size = new System.Drawing.Size(208, 152);
-            this.InputLayout.TabIndex = 1;
+            this.FirstResultDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextInputLayout.SetColumnSpan(this.FirstResultDisplay, 2);
+            this.FirstResultDisplay.Location = new System.Drawing.Point(47, 172);
+            this.FirstResultDisplay.Margin = new System.Windows.Forms.Padding(6);
+            this.FirstResultDisplay.Name = "FirstResultDisplay";
+            this.FirstResultDisplay.ReadOnly = true;
+            this.FirstResultDisplay.Size = new System.Drawing.Size(166, 30);
+            this.FirstResultDisplay.TabIndex = 8;
+            this.FirstResultDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.FirstResultDisplay.Enter += new System.EventHandler(this.TextOutputGroup_Enter);
+            // 
+            // FindRootsButton
+            // 
+            this.FindRootsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextInputLayout.SetColumnSpan(this.FindRootsButton, 2);
+            this.FindRootsButton.Location = new System.Drawing.Point(45, 130);
+            this.FindRootsButton.Margin = new System.Windows.Forms.Padding(4);
+            this.FindRootsButton.Name = "FindRootsButton";
+            this.FindRootsButton.Size = new System.Drawing.Size(170, 32);
+            this.FindRootsButton.TabIndex = 6;
+            this.FindRootsButton.Text = "Find Roots";
+            this.FindRootsButton.UseVisualStyleBackColor = true;
+            this.FindRootsButton.Click += new System.EventHandler(this.FindRootsButton_Click);
+            // 
+            // FirstResLabel
+            // 
+            this.FirstResLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.FirstResLabel.AutoSize = true;
+            this.FirstResLabel.Location = new System.Drawing.Point(3, 176);
+            this.FirstResLabel.Name = "FirstResLabel";
+            this.FirstResLabel.Size = new System.Drawing.Size(35, 22);
+            this.FirstResLabel.TabIndex = 7;
+            this.FirstResLabel.Text = "x1:";
+            // 
+            // SecondResLabel
+            // 
+            this.SecondResLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.SecondResLabel.AutoSize = true;
+            this.SecondResLabel.Location = new System.Drawing.Point(3, 218);
+            this.SecondResLabel.Name = "SecondResLabel";
+            this.SecondResLabel.Size = new System.Drawing.Size(35, 22);
+            this.SecondResLabel.TabIndex = 9;
+            this.SecondResLabel.Text = "x2:";
+            // 
+            // TextInputLayout
+            // 
+            this.TextInputLayout.ColumnCount = 3;
+            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.TextInputLayout.Controls.Add(this.SecondResultDisplay, 1, 5);
+            this.TextInputLayout.Controls.Add(this.TermA_Label, 0, 0);
+            this.TextInputLayout.Controls.Add(this.SecondResLabel, 0, 5);
+            this.TextInputLayout.Controls.Add(this.TermA_Input, 2, 0);
+            this.TextInputLayout.Controls.Add(this.FirstResLabel, 0, 4);
+            this.TextInputLayout.Controls.Add(this.FindRootsButton, 1, 3);
+            this.TextInputLayout.Controls.Add(this.TermB_Label, 0, 1);
+            this.TextInputLayout.Controls.Add(this.TermC_Label, 0, 2);
+            this.TextInputLayout.Controls.Add(this.TermB_Input, 2, 1);
+            this.TextInputLayout.Controls.Add(this.TermC_Input, 2, 2);
+            this.TextInputLayout.Controls.Add(this.FirstResultDisplay, 1, 4);
+            this.TextInputLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextInputLayout.Location = new System.Drawing.Point(0, 44);
+            this.TextInputLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.TextInputLayout.MinimumSize = new System.Drawing.Size(88, 136);
+            this.TextInputLayout.Name = "TextInputLayout";
+            this.TextInputLayout.RowCount = 7;
+            this.MainLayout.SetRowSpan(this.TextInputLayout, 2);
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TextInputLayout.Size = new System.Drawing.Size(219, 366);
+            this.TextInputLayout.TabIndex = 1;
             // 
             // TermA_Label
             // 
             this.TermA_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TermA_Label.AutoSize = true;
-            this.TermA_Label.Location = new System.Drawing.Point(4, 8);
+            this.TermA_Label.Location = new System.Drawing.Point(14, 10);
             this.TermA_Label.Name = "TermA_Label";
-            this.TermA_Label.Size = new System.Drawing.Size(18, 17);
+            this.TermA_Label.Size = new System.Drawing.Size(24, 22);
             this.TermA_Label.TabIndex = 0;
             this.TermA_Label.Text = "a:";
             // 
             // TermA_Input
             // 
             this.TermA_Input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TermA_Input.Location = new System.Drawing.Point(28, 4);
-            this.TermA_Input.MaximumSize = new System.Drawing.Size(100, 25);
+            this.TermA_Input.Location = new System.Drawing.Point(105, 6);
+            this.TermA_Input.Margin = new System.Windows.Forms.Padding(6);
             this.TermA_Input.Name = "TermA_Input";
-            this.TermA_Input.Size = new System.Drawing.Size(100, 25);
+            this.TermA_Input.Size = new System.Drawing.Size(108, 30);
             this.TermA_Input.TabIndex = 1;
             this.TermA_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TermA_Input.Enter += new System.EventHandler(this.TextInputGroup_Enter);
             // 
             // TermB_Label
             // 
             this.TermB_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TermB_Label.AutoSize = true;
-            this.TermB_Label.Location = new System.Drawing.Point(3, 41);
+            this.TermB_Label.Location = new System.Drawing.Point(13, 52);
             this.TermB_Label.Name = "TermB_Label";
-            this.TermB_Label.Size = new System.Drawing.Size(19, 17);
+            this.TermB_Label.Size = new System.Drawing.Size(25, 22);
             this.TermB_Label.TabIndex = 2;
             this.TermB_Label.Text = "b:";
             // 
@@ -136,123 +201,82 @@
             // 
             this.TermC_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TermC_Label.AutoSize = true;
-            this.TermC_Label.Location = new System.Drawing.Point(5, 74);
+            this.TermC_Label.Location = new System.Drawing.Point(15, 94);
             this.TermC_Label.Name = "TermC_Label";
-            this.TermC_Label.Size = new System.Drawing.Size(17, 17);
-            this.TermC_Label.TabIndex = 3;
+            this.TermC_Label.Size = new System.Drawing.Size(23, 22);
+            this.TermC_Label.TabIndex = 4;
             this.TermC_Label.Text = "c:";
             // 
             // TermB_Input
             // 
             this.TermB_Input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TermB_Input.Location = new System.Drawing.Point(28, 37);
-            this.TermB_Input.MaximumSize = new System.Drawing.Size(100, 25);
+            this.TermB_Input.Location = new System.Drawing.Point(105, 48);
+            this.TermB_Input.Margin = new System.Windows.Forms.Padding(6);
             this.TermB_Input.Name = "TermB_Input";
-            this.TermB_Input.Size = new System.Drawing.Size(100, 25);
-            this.TermB_Input.TabIndex = 4;
+            this.TermB_Input.Size = new System.Drawing.Size(108, 30);
+            this.TermB_Input.TabIndex = 3;
             this.TermB_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TermB_Input.Enter += new System.EventHandler(this.TextInputGroup_Enter);
             // 
             // TermC_Input
             // 
             this.TermC_Input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TermC_Input.Location = new System.Drawing.Point(28, 70);
-            this.TermC_Input.MaximumSize = new System.Drawing.Size(100, 25);
+            this.TermC_Input.Location = new System.Drawing.Point(105, 90);
+            this.TermC_Input.Margin = new System.Windows.Forms.Padding(6);
             this.TermC_Input.Name = "TermC_Input";
-            this.TermC_Input.Size = new System.Drawing.Size(100, 25);
+            this.TermC_Input.Size = new System.Drawing.Size(108, 30);
             this.TermC_Input.TabIndex = 5;
             this.TermC_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TermC_Input.Enter += new System.EventHandler(this.TextInputGroup_Enter);
             // 
-            // tableLayoutPanel1
+            // MainLayout
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.SecondResultDisplay, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.FirstResultDisplay, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.FindRootsButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(288, 56);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(208, 120);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.MainLayout.ColumnCount = 2;
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.MainLayout.Controls.Add(this.TextInputLayout, 0, 1);
+            this.MainLayout.Controls.Add(this.TitleLabel, 0, 0);
+            this.MainLayout.Controls.Add(this.PlotCanvas, 1, 2);
+            this.MainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainLayout.Location = new System.Drawing.Point(4, 4);
+            this.MainLayout.Name = "MainLayout";
+            this.MainLayout.RowCount = 3;
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MainLayout.Size = new System.Drawing.Size(665, 410);
+            this.MainLayout.TabIndex = 0;
             // 
-            // FindRootsButton
+            // TitleLabel
             // 
-            this.FindRootsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.FindRootsButton, 2);
-            this.FindRootsButton.Location = new System.Drawing.Point(16, 3);
-            this.FindRootsButton.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
-            this.FindRootsButton.Name = "FindRootsButton";
-            this.FindRootsButton.Size = new System.Drawing.Size(176, 27);
-            this.FindRootsButton.TabIndex = 0;
-            this.FindRootsButton.Text = "Find Roots";
-            this.FindRootsButton.UseVisualStyleBackColor = true;
-            this.FindRootsButton.Click += new System.EventHandler(this.FindRootsButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "x1:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "x2:";
-            // 
-            // FirstResultDisplay
-            // 
-            this.FirstResultDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.FirstResultDisplay.Location = new System.Drawing.Point(33, 37);
-            this.FirstResultDisplay.MaximumSize = new System.Drawing.Size(100, 25);
-            this.FirstResultDisplay.Name = "FirstResultDisplay";
-            this.FirstResultDisplay.Size = new System.Drawing.Size(100, 25);
-            this.FirstResultDisplay.TabIndex = 3;
-            this.FirstResultDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // SecondResultDisplay
-            // 
-            this.SecondResultDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.SecondResultDisplay.Location = new System.Drawing.Point(33, 70);
-            this.SecondResultDisplay.MaximumSize = new System.Drawing.Size(100, 25);
-            this.SecondResultDisplay.Name = "SecondResultDisplay";
-            this.SecondResultDisplay.Size = new System.Drawing.Size(100, 25);
-            this.SecondResultDisplay.TabIndex = 4;
-            this.SecondResultDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TitleLabel.AutoSize = true;
+            this.MainLayout.SetColumnSpan(this.TitleLabel, 2);
+            this.TitleLabel.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.Location = new System.Drawing.Point(113, 8);
+            this.TitleLabel.Margin = new System.Windows.Forms.Padding(8);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(439, 28);
+            this.TitleLabel.TabIndex = 0;
+            this.TitleLabel.Text = "Solve Trinomials With Quadratic Formula";
             // 
             // TrinomialsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AcceptButton = this.FindRootsButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 421);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientSize = new System.Drawing.Size(673, 418);
+            this.Controls.Add(this.MainPanel);
+            this.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TrinomialsForm";
             this.Text = "Trinomials";
             ((System.ComponentModel.ISupportInitialize)(this.PlotCanvas)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.InputLayout.ResumeLayout(false);
-            this.InputLayout.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
+            this.TextInputLayout.ResumeLayout(false);
+            this.TextInputLayout.PerformLayout();
+            this.MainLayout.ResumeLayout(false);
+            this.MainLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -260,21 +284,21 @@
         #endregion
 
         private System.Windows.Forms.PictureBox PlotCanvas;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel InputLayout;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.TableLayoutPanel TextInputLayout;
         private System.Windows.Forms.Label TermA_Label;
         private System.Windows.Forms.TextBox TermA_Input;
         private System.Windows.Forms.Label TermB_Label;
         private System.Windows.Forms.Label TermC_Label;
         private System.Windows.Forms.TextBox TermB_Input;
         private System.Windows.Forms.TextBox TermC_Input;
-        private System.Windows.Forms.Button TestButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox SecondResultDisplay;
         private System.Windows.Forms.TextBox FirstResultDisplay;
         private System.Windows.Forms.Button FindRootsButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label FirstResLabel;
+        private System.Windows.Forms.Label SecondResLabel;
+        private System.Windows.Forms.TableLayoutPanel MainLayout;
+        private System.Windows.Forms.Label TitleLabel;
     }
 }
 
