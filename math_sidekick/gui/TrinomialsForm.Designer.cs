@@ -30,6 +30,7 @@
         {
             this.PlotCanvas = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TestButton = new System.Windows.Forms.Button();
             this.InputLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TermA_Label = new System.Windows.Forms.Label();
             this.TermA_Input = new System.Windows.Forms.TextBox();
@@ -37,15 +38,21 @@
             this.TermC_Label = new System.Windows.Forms.Label();
             this.TermB_Input = new System.Windows.Forms.TextBox();
             this.TermC_Input = new System.Windows.Forms.TextBox();
-            this.TestButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.FindRootsButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FirstResultDisplay = new System.Windows.Forms.TextBox();
+            this.SecondResultDisplay = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PlotCanvas)).BeginInit();
             this.panel1.SuspendLayout();
             this.InputLayout.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PlotCanvas
             // 
-            this.PlotCanvas.Location = new System.Drawing.Point(416, 232);
+            this.PlotCanvas.Location = new System.Drawing.Point(456, 256);
             this.PlotCanvas.Name = "PlotCanvas";
             this.PlotCanvas.Size = new System.Drawing.Size(184, 152);
             this.PlotCanvas.TabIndex = 0;
@@ -53,6 +60,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.TestButton);
             this.panel1.Controls.Add(this.InputLayout);
             this.panel1.Controls.Add(this.PlotCanvas);
@@ -61,6 +69,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(661, 421);
             this.panel1.TabIndex = 1;
+            // 
+            // TestButton
+            // 
+            this.TestButton.Location = new System.Drawing.Point(64, 344);
+            this.TestButton.Name = "TestButton";
+            this.TestButton.Size = new System.Drawing.Size(128, 24);
+            this.TestButton.TabIndex = 2;
+            this.TestButton.Text = "Test Graphics";
+            this.TestButton.UseVisualStyleBackColor = true;
+            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
             // 
             // InputLayout
             // 
@@ -102,6 +120,7 @@
             this.TermA_Input.Name = "TermA_Input";
             this.TermA_Input.Size = new System.Drawing.Size(100, 25);
             this.TermA_Input.TabIndex = 1;
+            this.TermA_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TermB_Label
             // 
@@ -131,6 +150,7 @@
             this.TermB_Input.Name = "TermB_Input";
             this.TermB_Input.Size = new System.Drawing.Size(100, 25);
             this.TermB_Input.TabIndex = 4;
+            this.TermB_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TermC_Input
             // 
@@ -140,16 +160,82 @@
             this.TermC_Input.Name = "TermC_Input";
             this.TermC_Input.Size = new System.Drawing.Size(100, 25);
             this.TermC_Input.TabIndex = 5;
+            this.TermC_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // TestButton
+            // tableLayoutPanel1
             // 
-            this.TestButton.Location = new System.Drawing.Point(104, 256);
-            this.TestButton.Name = "TestButton";
-            this.TestButton.Size = new System.Drawing.Size(128, 24);
-            this.TestButton.TabIndex = 2;
-            this.TestButton.Text = "Test Graphics";
-            this.TestButton.UseVisualStyleBackColor = true;
-            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.SecondResultDisplay, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.FirstResultDisplay, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.FindRootsButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(288, 56);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(208, 120);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // FindRootsButton
+            // 
+            this.FindRootsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.FindRootsButton, 2);
+            this.FindRootsButton.Location = new System.Drawing.Point(16, 3);
+            this.FindRootsButton.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
+            this.FindRootsButton.Name = "FindRootsButton";
+            this.FindRootsButton.Size = new System.Drawing.Size(176, 27);
+            this.FindRootsButton.TabIndex = 0;
+            this.FindRootsButton.Text = "Find Roots";
+            this.FindRootsButton.UseVisualStyleBackColor = true;
+            this.FindRootsButton.Click += new System.EventHandler(this.FindRootsButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "x1:";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "x2:";
+            // 
+            // FirstResultDisplay
+            // 
+            this.FirstResultDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.FirstResultDisplay.Location = new System.Drawing.Point(33, 37);
+            this.FirstResultDisplay.MaximumSize = new System.Drawing.Size(100, 25);
+            this.FirstResultDisplay.Name = "FirstResultDisplay";
+            this.FirstResultDisplay.Size = new System.Drawing.Size(100, 25);
+            this.FirstResultDisplay.TabIndex = 3;
+            this.FirstResultDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // SecondResultDisplay
+            // 
+            this.SecondResultDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.SecondResultDisplay.Location = new System.Drawing.Point(33, 70);
+            this.SecondResultDisplay.MaximumSize = new System.Drawing.Size(100, 25);
+            this.SecondResultDisplay.Name = "SecondResultDisplay";
+            this.SecondResultDisplay.Size = new System.Drawing.Size(100, 25);
+            this.SecondResultDisplay.TabIndex = 4;
+            this.SecondResultDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TrinomialsForm
             // 
@@ -165,6 +251,8 @@
             this.panel1.ResumeLayout(false);
             this.InputLayout.ResumeLayout(false);
             this.InputLayout.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -181,6 +269,12 @@
         private System.Windows.Forms.TextBox TermB_Input;
         private System.Windows.Forms.TextBox TermC_Input;
         private System.Windows.Forms.Button TestButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox SecondResultDisplay;
+        private System.Windows.Forms.TextBox FirstResultDisplay;
+        private System.Windows.Forms.Button FindRootsButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

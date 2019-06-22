@@ -25,24 +25,29 @@ namespace math_sidekick
             Graphics g = PlotCanvas.CreateGraphics();
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             g.DrawBezier(pen, 0, 0, 50, 0, 0, 50, 50, 50);
+        }
 
-            string answer;
-            double aTerm, bTerm, cTerm;
-            
-            double.TryParse(TermA_Input.Text, out aTerm);
-            double.TryParse(TermB_Input.Text, out bTerm);
-            double.TryParse(TermC_Input.Text, out cTerm);
+        private void FindRootsButton_Click(object sender, EventArgs e)
+        {
+            const string STRF_REAL = "0.###;-0.###;";
+            const string STRF_IMAG = "0.###;0.###;";
+
+            double.TryParse(TermA_Input.Text, out double aTerm);
+            double.TryParse(TermB_Input.Text, out double bTerm);
+            double.TryParse(TermC_Input.Text, out double cTerm);
 
             Complex[] result = MyMath.FindRootsQuadTrinom(aTerm, bTerm, cTerm);
+            string[] stringResult = new string[2];
 
-            answer = string.Format(
-                "x1 = {0:0.###} + {1:0.###}i\nx2 = {2:0.###} + {3:0.###}i",
-                result[0].Real,
-                result[0].Imaginary,
-                result[1].Real,
-                result[1].Imaginary);
-
-            MessageBox.Show(answer);
+            if (Equals(result[0],result[1]))
+            {//there's one root
+                FirstResultDisplay.Text = ExpressionParser.ComposeComplex(result[0]);
+            }
+            else
+            {//there's two roots
+                FirstResultDisplay.Text = ExpressionParser.ComposeComplex(result[0]);
+                SecondResultDisplay.Text = ExpressionParser.ComposeComplex(result[1]);
+            }
         }
     }
 }
