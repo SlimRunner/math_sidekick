@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
 
-namespace math_sidekick.libraries
+namespace math_sidekick.libraries.math
 {
     public static class MyMath
     {
@@ -31,8 +31,7 @@ namespace math_sidekick.libraries
 
         public static Complex[] FindRootsQuadTrinom(Complex a_term, Complex b_term, Complex c_term)
         {
-            //all quadratic trinomials have two answers
-            Complex x1, x2;
+            //all quadratic trinomials have either one or two answers
             Complex[] x = new Complex[]
             {
                 new Complex(0, 0),
@@ -40,21 +39,17 @@ namespace math_sidekick.libraries
             };
             Complex discriminant;
 
+            //calculates the discriminant
             discriminant = Complex.Add(Complex.Pow(b_term, 2), Complex.Multiply(-4, Complex.Multiply(a_term, c_term)));
-
-            if (discriminant.Imaginary != Complex.Zero.Imaginary)
-            {
-                //idk wtf this is supposed to mean???
-                //return x;
-            }
-
+            
+            //calcualtes the root(s)
             if (discriminant.Real != 0)
-            {
+            {//two roots
                 x[0] = Complex.Divide(Complex.Add(Complex.Negate(b_term), Complex.Sqrt(discriminant)), Complex.Multiply(2, a_term));
                 x[1] = Complex.Divide(Complex.Subtract(Complex.Negate(b_term), Complex.Sqrt(discriminant)), Complex.Multiply(2, a_term));
             }
             else
-            {
+            {//one root
                 x[0] = Complex.Divide(Complex.Add(Complex.Negate(b_term), Complex.Sqrt(discriminant)), Complex.Multiply(2, a_term));
                 x[1] = x[0];
             }
