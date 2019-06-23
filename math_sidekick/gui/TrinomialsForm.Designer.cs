@@ -30,24 +30,24 @@
         {
             this.PlotCanvas = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.TextInputLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SecondResultDisplay = new System.Windows.Forms.TextBox();
             this.FirstResultDisplay = new System.Windows.Forms.TextBox();
             this.FindRootsButton = new System.Windows.Forms.Button();
-            this.FirstResLabel = new System.Windows.Forms.Label();
-            this.SecondResLabel = new System.Windows.Forms.Label();
-            this.TextInputLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TermA_Label = new System.Windows.Forms.Label();
+            this.SecondResLabel = new System.Windows.Forms.Label();
             this.TermA_Input = new System.Windows.Forms.TextBox();
+            this.FirstResLabel = new System.Windows.Forms.Label();
             this.TermB_Label = new System.Windows.Forms.Label();
             this.TermC_Label = new System.Windows.Forms.Label();
             this.TermB_Input = new System.Windows.Forms.TextBox();
             this.TermC_Input = new System.Windows.Forms.TextBox();
-            this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TitleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PlotCanvas)).BeginInit();
             this.MainPanel.SuspendLayout();
-            this.TextInputLayout.SuspendLayout();
             this.MainLayout.SuspendLayout();
+            this.TextInputLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // PlotCanvas
@@ -70,6 +70,58 @@
             this.MainPanel.Padding = new System.Windows.Forms.Padding(4);
             this.MainPanel.Size = new System.Drawing.Size(624, 441);
             this.MainPanel.TabIndex = 0;
+            // 
+            // MainLayout
+            // 
+            this.MainLayout.ColumnCount = 2;
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.MainLayout.Controls.Add(this.TextInputLayout, 0, 1);
+            this.MainLayout.Controls.Add(this.TitleLabel, 0, 0);
+            this.MainLayout.Controls.Add(this.PlotCanvas, 1, 2);
+            this.MainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainLayout.Location = new System.Drawing.Point(4, 4);
+            this.MainLayout.Name = "MainLayout";
+            this.MainLayout.RowCount = 3;
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MainLayout.Size = new System.Drawing.Size(616, 433);
+            this.MainLayout.TabIndex = 0;
+            // 
+            // TextInputLayout
+            // 
+            this.TextInputLayout.ColumnCount = 3;
+            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.TextInputLayout.Controls.Add(this.SecondResultDisplay, 1, 5);
+            this.TextInputLayout.Controls.Add(this.TermA_Label, 0, 0);
+            this.TextInputLayout.Controls.Add(this.SecondResLabel, 0, 5);
+            this.TextInputLayout.Controls.Add(this.TermA_Input, 2, 0);
+            this.TextInputLayout.Controls.Add(this.FirstResLabel, 0, 4);
+            this.TextInputLayout.Controls.Add(this.FindRootsButton, 1, 3);
+            this.TextInputLayout.Controls.Add(this.TermB_Label, 0, 1);
+            this.TextInputLayout.Controls.Add(this.TermC_Label, 0, 2);
+            this.TextInputLayout.Controls.Add(this.TermB_Input, 2, 1);
+            this.TextInputLayout.Controls.Add(this.TermC_Input, 2, 2);
+            this.TextInputLayout.Controls.Add(this.FirstResultDisplay, 1, 4);
+            this.TextInputLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextInputLayout.Location = new System.Drawing.Point(0, 44);
+            this.TextInputLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.TextInputLayout.MinimumSize = new System.Drawing.Size(88, 136);
+            this.TextInputLayout.Name = "TextInputLayout";
+            this.TextInputLayout.RowCount = 7;
+            this.MainLayout.SetRowSpan(this.TextInputLayout, 2);
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TextInputLayout.Size = new System.Drawing.Size(203, 389);
+            this.TextInputLayout.TabIndex = 1;
             // 
             // SecondResultDisplay
             // 
@@ -112,15 +164,15 @@
             this.FindRootsButton.UseVisualStyleBackColor = true;
             this.FindRootsButton.Click += new System.EventHandler(this.FindRootsButton_Click);
             // 
-            // FirstResLabel
+            // TermA_Label
             // 
-            this.FirstResLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.FirstResLabel.AutoSize = true;
-            this.FirstResLabel.Location = new System.Drawing.Point(3, 176);
-            this.FirstResLabel.Name = "FirstResLabel";
-            this.FirstResLabel.Size = new System.Drawing.Size(35, 22);
-            this.FirstResLabel.TabIndex = 7;
-            this.FirstResLabel.Text = "x&1:";
+            this.TermA_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TermA_Label.AutoSize = true;
+            this.TermA_Label.Location = new System.Drawing.Point(14, 10);
+            this.TermA_Label.Name = "TermA_Label";
+            this.TermA_Label.Size = new System.Drawing.Size(24, 22);
+            this.TermA_Label.TabIndex = 0;
+            this.TermA_Label.Text = "&a:";
             // 
             // SecondResLabel
             // 
@@ -132,60 +184,28 @@
             this.SecondResLabel.TabIndex = 9;
             this.SecondResLabel.Text = "x&2:";
             // 
-            // TextInputLayout
-            // 
-            this.TextInputLayout.ColumnCount = 3;
-            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.TextInputLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.TextInputLayout.Controls.Add(this.SecondResultDisplay, 1, 5);
-            this.TextInputLayout.Controls.Add(this.TermA_Label, 0, 0);
-            this.TextInputLayout.Controls.Add(this.SecondResLabel, 0, 5);
-            this.TextInputLayout.Controls.Add(this.TermA_Input, 2, 0);
-            this.TextInputLayout.Controls.Add(this.FirstResLabel, 0, 4);
-            this.TextInputLayout.Controls.Add(this.FindRootsButton, 1, 3);
-            this.TextInputLayout.Controls.Add(this.TermB_Label, 0, 1);
-            this.TextInputLayout.Controls.Add(this.TermC_Label, 0, 2);
-            this.TextInputLayout.Controls.Add(this.TermB_Input, 2, 1);
-            this.TextInputLayout.Controls.Add(this.TermC_Input, 2, 2);
-            this.TextInputLayout.Controls.Add(this.FirstResultDisplay, 1, 4);
-            this.TextInputLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextInputLayout.Location = new System.Drawing.Point(0, 44);
-            this.TextInputLayout.Margin = new System.Windows.Forms.Padding(0);
-            this.TextInputLayout.MinimumSize = new System.Drawing.Size(88, 136);
-            this.TextInputLayout.Name = "TextInputLayout";
-            this.TextInputLayout.RowCount = 7;
-            this.MainLayout.SetRowSpan(this.TextInputLayout, 2);
-            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TextInputLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TextInputLayout.Size = new System.Drawing.Size(203, 389);
-            this.TextInputLayout.TabIndex = 1;
-            // 
-            // TermA_Label
-            // 
-            this.TermA_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.TermA_Label.AutoSize = true;
-            this.TermA_Label.Location = new System.Drawing.Point(14, 10);
-            this.TermA_Label.Name = "TermA_Label";
-            this.TermA_Label.Size = new System.Drawing.Size(24, 22);
-            this.TermA_Label.TabIndex = 0;
-            this.TermA_Label.Text = "&a:";
-            // 
             // TermA_Input
             // 
             this.TermA_Input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TermA_Input.BackColor = System.Drawing.SystemColors.Window;
             this.TermA_Input.Location = new System.Drawing.Point(100, 6);
             this.TermA_Input.Margin = new System.Windows.Forms.Padding(6);
             this.TermA_Input.Name = "TermA_Input";
             this.TermA_Input.Size = new System.Drawing.Size(97, 30);
             this.TermA_Input.TabIndex = 1;
             this.TermA_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TermA_Input.TextChanged += new System.EventHandler(this.TextInputGroup_TextChanged);
             this.TermA_Input.Enter += new System.EventHandler(this.TextInputGroup_Enter);
+            // 
+            // FirstResLabel
+            // 
+            this.FirstResLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.FirstResLabel.AutoSize = true;
+            this.FirstResLabel.Location = new System.Drawing.Point(3, 176);
+            this.FirstResLabel.Name = "FirstResLabel";
+            this.FirstResLabel.Size = new System.Drawing.Size(35, 22);
+            this.FirstResLabel.TabIndex = 7;
+            this.FirstResLabel.Text = "x&1:";
             // 
             // TermB_Label
             // 
@@ -216,6 +236,7 @@
             this.TermB_Input.Size = new System.Drawing.Size(97, 30);
             this.TermB_Input.TabIndex = 3;
             this.TermB_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TermB_Input.TextChanged += new System.EventHandler(this.TextInputGroup_TextChanged);
             this.TermB_Input.Enter += new System.EventHandler(this.TextInputGroup_Enter);
             // 
             // TermC_Input
@@ -227,25 +248,8 @@
             this.TermC_Input.Size = new System.Drawing.Size(97, 30);
             this.TermC_Input.TabIndex = 5;
             this.TermC_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TermC_Input.TextChanged += new System.EventHandler(this.TextInputGroup_TextChanged);
             this.TermC_Input.Enter += new System.EventHandler(this.TextInputGroup_Enter);
-            // 
-            // MainLayout
-            // 
-            this.MainLayout.ColumnCount = 2;
-            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.MainLayout.Controls.Add(this.TextInputLayout, 0, 1);
-            this.MainLayout.Controls.Add(this.TitleLabel, 0, 0);
-            this.MainLayout.Controls.Add(this.PlotCanvas, 1, 2);
-            this.MainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainLayout.Location = new System.Drawing.Point(4, 4);
-            this.MainLayout.Name = "MainLayout";
-            this.MainLayout.RowCount = 3;
-            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainLayout.Size = new System.Drawing.Size(616, 433);
-            this.MainLayout.TabIndex = 0;
             // 
             // TitleLabel
             // 
@@ -274,10 +278,10 @@
             this.Text = "Quadratic Trinomials Solver";
             ((System.ComponentModel.ISupportInitialize)(this.PlotCanvas)).EndInit();
             this.MainPanel.ResumeLayout(false);
-            this.TextInputLayout.ResumeLayout(false);
-            this.TextInputLayout.PerformLayout();
             this.MainLayout.ResumeLayout(false);
             this.MainLayout.PerformLayout();
+            this.TextInputLayout.ResumeLayout(false);
+            this.TextInputLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
