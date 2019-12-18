@@ -49,7 +49,7 @@ namespace math_sidekick
 
         private void FindRootsButton_Click(object sender, EventArgs e)
         {
-            const int ERR_A_TERM_FIELD = 1 << 0;
+            const int ERR_A_TERM_FIELD = 1;
             const int ERR_B_TERM_FIELD = 1 << 1;
             const int ERR_C_TERM_FIELD = 1 << 2;
             
@@ -65,7 +65,6 @@ namespace math_sidekick
             if (errBitField == 0)
             {
                 Complex[] result = MyMath.FindRootsQuadTrinom(aTerm, bTerm, cTerm);
-                string[] stringResult = new string[2];
 
                 if (Equals(result[0],result[1]))
                 {//there's one root
